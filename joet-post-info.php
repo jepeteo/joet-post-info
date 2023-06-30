@@ -38,7 +38,7 @@ class JoetPluginPostStatistics{
         }
 
         if (get_option('joet_readtime', '1' )) {
-            $html .= 'This post will take about ' . round($wordCount/225) . ' minute(s) to read.<br>';
+            $html .= 'This post will take about ' . round($wordCount/180) . ' minute(s) to read.<br>';
         }
 
         $html .= '</p>';
