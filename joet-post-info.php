@@ -5,6 +5,8 @@
     Version: 1.0
     Author: Theodore Mentis
     Author URI: https://www.linkedin.com/in/thmentis/
+    Text Domain: joet_pi
+    Domain Path: /languages
 */
 
 class JoetPluginPostStatistics{
@@ -12,6 +14,11 @@ class JoetPluginPostStatistics{
         add_action('admin_menu', array($this, 'adminPage'));
         add_action('admin_init', array($this, 'settings'));
         add_filter('the_content', array($this, 'ifWrap'));
+        add_action('init', array($this, 'languages'));
+    }
+
+    function languages() {
+        load_plugin_textdomain('joet_pi', false, dirname(plugin_basename(__FILE__)) . '/languages');
     }
 
     function ifWrap($content){
@@ -30,15 +37,15 @@ class JoetPluginPostStatistics{
         }
 
         if (get_option('joet_wordcount', '1' )) {
-            $html .= 'This post has ' . $wordCount . ' words.<br>';
+            $html .= esc_html__('This post has', 'joet_pi') . " " . $wordCount . " " . esc_html__('words', 'joet_pi') . '.<br>';
         }
 
         if (get_option('joet_charcount', '1' )) {
-            $html .= 'This post has ' . strlen(strip_tags($wordCount)) . ' characters.<br>';
+            $html .= esc_html__('This post has', 'joet_pi') . " " . strlen(strip_tags($wordCount)) . " " .  esc_html__('characters', 'joet_pi') . '.<br>';
         }
 
         if (get_option('joet_readtime', '1' )) {
-            $html .= 'This post will take about ' . round($wordCount/180) . ' minute(s) to read.<br>';
+            $html .= esc_html__('This post will take about', 'joet_pi') . " " . round($wordCount/180) . " " . esc_html__('minute(s) to read', 'joet_pi') . '.<br>';
         }
 
         $html .= '</p>';
@@ -47,6 +54,7 @@ class JoetPluginPostStatistics{
             return $html . $content;
         }
         return $content . $html;
+        
     }
 
     function settings(){
@@ -76,6 +84,7 @@ class JoetPluginPostStatistics{
         return $input;
     }
 
+
     function locationHTML() { ?>
         <select name="joet_location">
             <option value="0" <?php selected(get_option('joet_location'),'0') ?>>Beggining of Post</option>
@@ -92,7 +101,7 @@ class JoetPluginPostStatistics{
     <?php }
 
     function adminPage() {
-        add_options_page('Joet Plugin Settings','Joet Settings', 'manage_options','joet-settings-page',array($this, 'joetHTML'));
+        add_options_page('Joet Plugin Settings', esc_html__('Joet Settings', 'joet_pi'), 'manage_options','joet-settings-page',array($this, 'joetHTML'));
     }
 
     function joetHTML(){ ?>
