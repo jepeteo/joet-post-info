@@ -1,0 +1,57 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Joet Post Information\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-01 07:03+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.4; wp-6.2.2\n"
+"X-Domain: joet_pi"
+
+#. Description of the plugin
+msgid "A plugin to display post information."
+msgstr ""
+
+#: joet-post-stats.php:44
+msgid "characters"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.linkedin.com/in/thmentis/"
+msgstr ""
+
+#. Name of the plugin
+msgid "Joet Post Information"
+msgstr ""
+
+#: joet-post-stats.php:104
+msgid "Joet Settings"
+msgstr ""
+
+#: joet-post-stats.php:48
+msgid "minute(s) to read"
+msgstr ""
+
+#. Author of the plugin
+msgid "Theodore Mentis"
+msgstr ""
+
+#: joet-post-stats.php:40 joet-post-stats.php:44
+msgid "This post has"
+msgstr ""
+
+#: joet-post-stats.php:48
+msgid "This post will take about"
+msgstr ""
+
+#: joet-post-stats.php:40
+msgid "words"
+msgstr ""
